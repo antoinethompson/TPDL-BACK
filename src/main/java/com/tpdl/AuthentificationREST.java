@@ -24,30 +24,16 @@ public class AuthentificationREST {
 
         String locationString=null;
         try {
-            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9bHU5b2h1a0ZLdkFUJmQ9WVdrOWRteEdPREJIWm1rbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUx&redirect_uri=https://tpdl-back.herokuapp.com/test/ok&response_type=code");
+            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9Q0xRWnl4MEVQVXU2JmQ9WVdrOVNFaHNlWFJSYkVRbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTE4&redirect_uri=https://tpdl-back.herokuapp.com/test/ok&response_type=code");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setInstanceFollowRedirects(false);
             con.setRequestMethod("GET");
-            System.out.println(con.getResponseCode());
 
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(con.getInputStream()));
-            String inputLine;
             int status = con.getResponseCode();
             if (status == HttpURLConnection.HTTP_MOVED_TEMP
                     || status == HttpURLConnection.HTTP_MOVED_PERM) {
                 locationString = con.getHeaderField("Location");
-                URL newUrl = new URL(locationString);
-                //con = (HttpURLConnection) newUrl.openConnection();
             }
-
-            StringBuffer content = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
-            }
-            System.out.println(content);
-            in.close();
-
         } catch (ProtocolException e) {
             throw new RuntimeException(e);
         } catch (MalformedURLException e) {
