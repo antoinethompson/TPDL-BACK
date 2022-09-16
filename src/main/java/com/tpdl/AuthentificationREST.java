@@ -19,7 +19,7 @@ import java.net.*;
 @RequestMapping(value = "/test")
 public class AuthentificationREST {
 
-    @GetMapping(value = "auth")
+    @GetMapping(value = "/auth")
     public ResponseEntity auth(){
 
         String locationString=null;
@@ -64,7 +64,7 @@ public class AuthentificationREST {
         return ResponseEntity.status(HttpStatus.MOVED_TEMPORARILY).location(location).build();
     }
 
-    @GetMapping(value = "ok")
+    @GetMapping(value = "/ok")
     public ResponseEntity<String> ok(@RequestParam("code") String authcode, HttpServletResponse httpServletResponse){
         return ResponseEntity.status(HttpStatus.OK).body("ok");
     }
