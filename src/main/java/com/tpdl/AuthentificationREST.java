@@ -22,7 +22,7 @@ public class AuthentificationREST {
 
         String locationString=null;
         try {
-            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9bHU5b2h1a0ZLdkFUJmQ9WVdrOWRteEdPREJIWm1rbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUx--&redirect_uri=https://data.economie.gouv.fr/api/v2/catalog/facets&response_type=code");
+            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9bHU5b2h1a0ZLdkFUJmQ9WVdrOWRteEdPREJIWm1rbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWUx&redirect_uri=https://tpdl-back.herokuapp.com/test/ok&response_type=code");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setInstanceFollowRedirects(false);
             con.setRequestMethod("GET");
@@ -62,4 +62,8 @@ public class AuthentificationREST {
         return ResponseEntity.status(HttpStatus.ACCEPTED.MOVED_PERMANENTLY).location(location).build();
     }
 
+    @GetMapping(value = "ok")
+    public void ok(){
+        System.out.println("ok");
+    }
 }
