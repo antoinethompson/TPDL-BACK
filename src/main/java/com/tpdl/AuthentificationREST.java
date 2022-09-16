@@ -59,12 +59,11 @@ public class AuthentificationREST {
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        return ResponseEntity.status(HttpStatus.OK).location(location).build();
+        return ResponseEntity.status(HttpStatus.MOVED_TEMPORARILY).location(location).build();
     }
 
     @GetMapping(value = "ok")
     public ResponseEntity<String> ok(){
-        System.out.println("ok");
         return ResponseEntity.status(HttpStatus.OK).body("ok");
     }
 }
