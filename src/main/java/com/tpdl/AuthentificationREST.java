@@ -24,7 +24,7 @@ public class AuthentificationREST {
 
         String locationString=null;
         try {
-            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9eldSMWJBZzRIUDBLJmQ9WVdrOVNYbFpXVTB6TlhrbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTk0&response_type=code&redirect_uri=tpdl-back.herokuapp.com/test/ok");
+            URL url = new URL("https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9eldSMWJBZzRIUDBLJmQ9WVdrOVNYbFpXVTB6TlhrbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTk0&response_type=code&redirect_uri=https://tpdl-back.herokuapp.com/test/ok");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setInstanceFollowRedirects(false);
             con.setRequestMethod("GET");
